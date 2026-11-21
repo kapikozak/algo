@@ -1,5 +1,4 @@
 from typing import List
-from math import log2
 
 class SegTree:
     def __init__(self, arr: List[int]) -> None:
@@ -118,7 +117,7 @@ def palindromePath(n: int, edges: list[list[int]], s: str, queries: list[str]) -
         graph[dst].append(src)
 
     letters = list(s)
-    log2_n = int(log2(n))
+    log2_n = n.bit_length() - 1
 
     tim = [-1] * n
     up = [[0] * (log2_n + 1) for _ in range(n)]
